@@ -213,7 +213,10 @@ function renderRecipients(recipients) {
   });
 }
 
-function closePane() {
+function cancelSend() {
+  Office.context.ui.closeContainer();
+}
 
+function sendAnyway() {
   Office.context.ui.closeContainer();
 }

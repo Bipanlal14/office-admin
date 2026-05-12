@@ -31,8 +31,8 @@
     <h1>⚠ External Recipient Warning</h1>
 
     <p class="subtitle">
-      You are sending this message outside Signature Clinic.
-      Please review the external recipients below before sending.
+      You are about to send this message to external recipients.
+	Please confirm the recipients are correct before sending.
     </p>
 
     <div id="summaryBox" class="summary-box"></div>
@@ -45,21 +45,15 @@
 
     <div class="button-group">
 
-      <button
-        class="cancel-btn"
-        onclick="closePane()"
-      >
-        Close
-      </button>
+  <button class="cancel-btn" onclick="cancelSend()">
+    Cancel Send
+  </button>
 
-      <button
-        class="send-btn"
-        onclick="refreshRecipients()"
-      >
-        Refresh
-      </button>
+  <button class="send-btn" onclick="sendAnyway()">
+    Send Anyway
+  </button>
 
-    </div>
+</div>
 
   </div>
 
