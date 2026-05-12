@@ -16,8 +16,10 @@ body {
 }
 
 .logo {
-  width: 80px;
-  margin-bottom: 20px;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 25px;
 }
 
 h1 {
@@ -75,4 +77,19 @@ button {
 
 .cancel-btn:hover {
   background: #444;
+}
+.safe-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
 }
