@@ -1,17 +1,78 @@
 body {
-  font-family: Arial;
-  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
 }
 
 .container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   text-align: center;
-  margin-top: 50px;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #d13438;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.email-list {
+  background: #fff5f5;
+  border: 1px solid #f3c2c2;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.email-item {
+  color: #d13438;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 button {
-  background: #0078d4;
-  color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 15px;
   cursor: pointer;
+}
+
+.cancel-btn {
+  background: #666;
+  color: white;
+}
+
+.send-btn {
+  background: #d13438;
+  color: white;
+}
+
+.send-btn:hover {
+  background: #a4262c;
+}
+
+.cancel-btn:hover {
+  background: #444;
 }

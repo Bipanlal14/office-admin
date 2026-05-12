@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <title>External Warning</title>
+  <title>External Recipient Warning</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -10,15 +12,28 @@
 
   <div class="container">
 
-    <img src="assets/logo.png" width="100">
+    <img src="assets/logo.png" class="logo">
 
-    <h1>External Email Warning</h1>
+    <h1>⚠ External Recipient Warning</h1>
 
-    <p>This email contains external recipients.</p>
+    <p class="subtitle">
+      You are about to send this email to external recipients:
+    </p>
 
-    <button onclick="checkRecipients()">
-      Continue
-    </button>
+    <div id="emailList" class="email-list">
+    </div>
+
+    <div class="button-group">
+
+      <button class="cancel-btn" onclick="cancelSend()">
+        Cancel
+      </button>
+
+      <button class="send-btn" onclick="sendAnyway()">
+        Send Anyway
+      </button>
+
+    </div>
 
   </div>
 
