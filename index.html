@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>External Recipient Warning</title>
 
@@ -13,30 +14,49 @@
 
 <body>
 
-  <div class="logo-container">
-  <img src="assets/logo.png" class="logo">
-</div>
-<div class="header-warning">
-  External Recipient Warning
-</div>
+  <div class="container">
+
+    <div class="logo-container">
+      <img
+        src="assets/logo.png"
+        class="logo"
+        alt="Signature Clinic Logo"
+      >
+    </div>
+
+    <div class="header-warning">
+      External Recipient Warning
+    </div>
 
     <h1>⚠ External Recipient Warning</h1>
 
     <p class="subtitle">
-      You are about to send this email to external recipients:
+      You are sending this message outside Signature Clinic.
+      Please review the external recipients below before sending.
     </p>
 
-    <div id="emailList" class="email-list">
+    <div id="summaryBox" class="summary-box"></div>
+
+    <div id="emailList" class="email-list"></div>
+
+    <div class="footer-note">
+      Always verify attachments and patient information before sending externally.
     </div>
 
     <div class="button-group">
 
-      <button class="cancel-btn" onclick="cancelSend()">
-        Cancel
+      <button
+        class="cancel-btn"
+        onclick="closePane()"
+      >
+        Close
       </button>
 
-      <button class="send-btn" onclick="sendAnyway()">
-        Send Anyway
+      <button
+        class="send-btn"
+        onclick="refreshRecipients()"
+      >
+        Refresh
       </button>
 
     </div>
