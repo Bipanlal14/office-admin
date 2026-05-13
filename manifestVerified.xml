@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="MailApp">
+
+  <Id>fec53ef9-3b81-47f3-b01f-5a72cbcaf396</Id>
+
+  <Version>1.0.0.3</Version>
+
+  <ProviderName>Signature Clinic</ProviderName>
+  <DefaultLocale>en-GB</DefaultLocale>
+
+  <DisplayName DefaultValue="External Email Warning"/>
+  <Description DefaultValue="Warn users when sending emails to external recipients."/>
+
+  <IconUrl DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/assets/logo.png"/>
+  <HighResolutionIconUrl DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/assets/logo.png"/>
+
+  <AppDomains>
+    <AppDomain>https://green-glacier-0a2034903.7.azurestaticapps.net</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/index.html"/>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+  </Rule>
+
+</OfficeApp>
