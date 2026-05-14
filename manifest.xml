@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<OfficeApp
-    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-    xsi:type="MailApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides"
+           xsi:type="MailApp">
 
   <Id>fec53ef9-3b81-47f3-b01f-5a72cbcaf396</Id>
 
-  <Version>1.0.0.5</Version>
+  <Version>1.0.0.11</Version>
 
   <ProviderName>Signature Clinic</ProviderName>
 
   <DefaultLocale>en-GB</DefaultLocale>
 
-  <DisplayName DefaultValue="External Email Warning"/>
+  <DisplayName DefaultValue="External Warning"/>
 
-  <Description DefaultValue="Warn users before sending external email."/>
+  <Description DefaultValue="Review external recipients before sending email."/>
 
-  <IconUrl DefaultValue="https://bipanlal14.github.io/office-admin/assets/logo.png"/>
+  <IconUrl DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/assets/logo.png"/>
 
-  <HighResolutionIconUrl DefaultValue="https://bipanlal14.github.io/office-admin/assets/logo.png"/>
+  <HighResolutionIconUrl DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/assets/logo.png"/>
 
-  <SupportUrl DefaultValue="https://bipanlal14.github.io/office-admin/index.html"/>
+  <SupportUrl DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net"/>
 
   <AppDomains>
-    <AppDomain>bipanlal14.github.io</AppDomain>
+    <AppDomain>https://green-glacier-0a2034903.7.azurestaticapps.net</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -34,14 +34,14 @@
 
   <Requirements>
     <Sets>
-      <Set Name="Mailbox" MinVersion="1.8"/>
+      <Set Name="Mailbox" MinVersion="1.5"/>
     </Sets>
   </Requirements>
 
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://bipanlal14.github.io/office-admin/index.html"/>
+        <SourceLocation DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/index.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -56,12 +56,11 @@
 
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 
-  <VersionOverrides
-      xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
-      xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
+                    xsi:type="VersionOverridesV1_0">
 
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.8">
+      <bt:Sets DefaultMinVersion="1.5">
         <bt:Set Name="Mailbox"/>
       </bt:Sets>
     </Requirements>
@@ -72,44 +71,32 @@
 
         <DesktopFormFactor>
 
-          <FunctionFile resid="functionFile"/>
-
-          <ExtensionPoint xsi:type="Events">
-
-            <Event Type="ItemSend"
-                   FunctionExecution="synchronous"
-                   FunctionName="onMessageSendHandler"/>
-
-          </ExtensionPoint>
-
           <ExtensionPoint xsi:type="MessageComposeCommandSurface">
 
             <OfficeTab id="TabDefault">
 
-              <Group id="msgComposeGroup">
+              <Group id="msgComposeCmdGroup">
 
-                <Label resid="groupLabel"/>
+                <Label resid="GroupLabel"/>
 
                 <Control xsi:type="Button"
-                         id="openPaneButton">
+                         id="msgComposeOpenPaneButton">
 
-                  <Label resid="buttonLabel"/>
+                  <Label resid="TaskpaneButton.Label"/>
 
                   <Supertip>
-                    <Title resid="buttonLabel"/>
-                    <Description resid="buttonDesc"/>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
                   </Supertip>
 
                   <Icon>
-                    <bt:Image size="16" resid="icon16"/>
-                    <bt:Image size="32" resid="icon32"/>
-                    <bt:Image size="80" resid="icon80"/>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
 
                   <Action xsi:type="ShowTaskpane">
-
-                    <SourceLocation resid="taskpaneUrl"/>
-
+                    <SourceLocation resid="Taskpane.Url"/>
                   </Action>
 
                 </Control>
@@ -130,41 +117,38 @@
 
       <bt:Images>
 
-        <bt:Image id="icon16"
-                  DefaultValue="https://bipanlal14.github.io/office-admin/assets/logo.png"/>
+        <bt:Image id="Icon.16x16"
+                  DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/assets/logo.png"/>
 
-        <bt:Image id="icon32"
-                  DefaultValue="https://bipanlal14.github.io/office-admin/assets/logo.png"/>
+        <bt:Image id="Icon.32x32"
+                  DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/assets/logo.png"/>
 
-        <bt:Image id="icon80"
-                  DefaultValue="https://bipanlal14.github.io/office-admin/assets/logo.png"/>
+        <bt:Image id="Icon.80x80"
+                  DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/assets/logo.png"/>
 
       </bt:Images>
 
       <bt:Urls>
 
-        <bt:Url id="taskpaneUrl"
-                DefaultValue="https://bipanlal14.github.io/office-admin/index.html"/>
-
-        <bt:Url id="functionFile"
-                DefaultValue="https://bipanlal14.github.io/office-admin/onsend.html"/>
+        <bt:Url id="Taskpane.Url"
+                DefaultValue="https://green-glacier-0a2034903.7.azurestaticapps.net/index.html"/>
 
       </bt:Urls>
 
       <bt:ShortStrings>
 
-        <bt:String id="groupLabel"
+        <bt:String id="GroupLabel"
                    DefaultValue="External Warning"/>
 
-        <bt:String id="buttonLabel"
+        <bt:String id="TaskpaneButton.Label"
                    DefaultValue="Check Recipients"/>
 
       </bt:ShortStrings>
 
       <bt:LongStrings>
 
-        <bt:String id="buttonDesc"
-                   DefaultValue="Check external recipients before sending."/>
+        <bt:String id="TaskpaneButton.Tooltip"
+                   DefaultValue="Review external recipients before sending."/>
 
       </bt:LongStrings>
 
